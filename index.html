@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pf_24</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black font-mono text-white w-screen h-screen flex justify-center items-center text-3xl">
+    <span onmouseover="morph()" id="text">&gt;&gt;&gt;pf_24</span>
+</body>
+<script>
+
+let audio;
+
+let interval;
+
+let base = ">>>pf_24".split("");
+
+let content = base.slice(0); // what
+
+let symbols = [
+    '>',
+    '<',
+    '$',
+    '_',
+    '#',
+    '-',
+    '/',
+    '\\',
+    '*',
+    '^',
+    'x',
+    'q',
+    'w',
+];
+
+let indexes = [];
+
+const el = document.getElementById('text');
+
+function morph() {
+    if (audio && !audio.ended) {
+        return;
+    }
+    let sound = Math.floor(Math.random() * 27) + 1;
+    audio = new Audio("sounds/" + sound + ".flac");
+    audio.play();
+    
+    interval = setInterval(() => {
+        if (audio.ended) {
+            clearInterval(interval);
+            content = base.slice(0);
+            el.innerText = content.join('');
+            return;
+        }
+        let index = Math.floor(Math.random() * base.length);
+        indexes.push(index);
+        if (indexes.length == 4) {
+            let _index = indexes.shift();
+            content[_index] = base[_index];
+        }
+        content[index] = symbols[Math.floor(Math.random() * symbols.length)];
+        el.innerText = content.join('');
+    }, 50)
+}
+
+</script>
+</html>
