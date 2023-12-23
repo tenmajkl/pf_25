@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black font-mono text-white w-screen h-screen flex justify-center items-center text-3xl">
-    <span onmouseover="morph()" id="text">&gt;&gt;&gt;pf_24</span>
+    <span onmouseover="morph()" id="text" onclick="morph()">&gt;&gt;&gt;pf_24</span>
 </body>
 <script>
 
@@ -45,6 +45,7 @@ function morph() {
     }
     let sound = Math.floor(Math.random() * 27) + 1;
     audio = new Audio("sounds/" + sound + ".flac");
+    audio.autoplay = true;
     audio.play();
     
     interval = setInterval(() => {
