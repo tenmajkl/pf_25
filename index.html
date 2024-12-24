@@ -80,8 +80,8 @@ function morph() {
     if (audio && !audio.ended) {
         return;
     }
-    let sound = Math.floor(Math.random() * 27) + 1;
-    audio = new Audio("sounds/" + sound + ".flac");
+    let sound = Math.floor(Math.random() * 29) + 1;
+    audio = new Audio("sounds/" + sound + ".wav");
     audio.autoplay = true;
     audio.play();
   
