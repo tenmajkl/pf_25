@@ -1,5 +1,5 @@
-# pf_24
+# pf_25
 
-pf for year 2024 with aestatics inspired by czech artist Oliver Torr.
+Web-based PF aesteticaly inspired by artists Oliver Torr and Axonbody. This year featuring strobing lights in colors that are somewhat connected to my 2024.
 
-Sound design by The Middleware.
+sound design by me (the middleware), feel free to use the sounds!
